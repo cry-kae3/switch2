@@ -16,7 +16,7 @@
       background: linear-gradient(135deg, #fafafa 0%, #f0f2f5 100%);
       color: #333;
       line-height: 1.5;
-      padding: 20px;
+      padding: 20px 2px;
       position: relative;
       overflow-x: hidden;
     }
@@ -175,6 +175,25 @@
     .table-container {
       overflow-x: auto;
       padding: 0;
+      position: relative;
+    }
+
+    .scroll-indicator-top,
+    .scroll-indicator-bottom {
+      display: none;
+      height: 8px;
+      background: linear-gradient(90deg, #dee2e6, #6c757d, #dee2e6);
+      border-radius: 4px;
+      margin: 0 10px;
+      opacity: 0.7;
+    }
+
+    .scroll-indicator-top {
+      margin-bottom: 5px;
+    }
+
+    .scroll-indicator-bottom {
+      margin-top: 5px;
     }
 
     table {
@@ -227,11 +246,6 @@
     .urgent {
       background: linear-gradient(90deg, #fff5f5, #ffffff);
       border-left: 3px solid #dc3545;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
     }
 
     .store-name {
@@ -429,7 +443,7 @@
 
     @media (max-width: 768px) {
       .container {
-        margin: 0 10px;
+        margin: 0 2px;
       }
       
       .header {
@@ -457,6 +471,17 @@
       .condition {
         font-size: 9px;
       }
+
+      .scroll-indicator-top,
+      .scroll-indicator-bottom {
+        display: block;
+        animation: scrollHint 2s infinite ease-in-out;
+      }
+    }
+
+    @keyframes scrollHint {
+      0%, 100% { opacity: 0.4; transform: scaleX(1); }
+      50% { opacity: 0.8; transform: scaleX(1.1); }
     }
 
     .hidden {
@@ -483,6 +508,7 @@
     </div>
 
     <div class="table-container">
+      <div class="scroll-indicator-top"></div>
       <table>
         <thead>
           <tr>
@@ -696,6 +722,7 @@
 
         </tbody>
       </table>
+      <div class="scroll-indicator-bottom"></div>
     </div>
 
     <div class="stats">
