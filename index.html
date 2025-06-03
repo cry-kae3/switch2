@@ -238,6 +238,10 @@
       transition: all 0.2s ease;
     }
 
+    td:nth-child(3) {
+      white-space: nowrap;
+    }
+
     tr:hover {
       background: #f8f9fa;
       transform: scale(1.001);
@@ -514,18 +518,17 @@
           <tr>
             <th>店舗名</th>
             <th>ステータス</th>
-            <th>対象モデル</th>
+            <th>応募</th>
             <th>受付期間</th>
             <th>応募条件</th>
             <th>結果発表</th>
             <th>購入期限</th>
-            <th>応募</th>
           </tr>
         </thead>
         <tbody id="tableBody">
           <!-- 全国版 -->
           <tr class="section-header">
-            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🌏 全国版 抽選販売</strong></td>
+            <td colspan="7" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🌏 全国版 抽選販売</strong></td>
           </tr>
           
           <tr data-status="active" class="urgent">
@@ -534,12 +537,11 @@
               <div class="store-type">任天堂公式</div>
             </td>
             <td><span class="status status-active">受付中</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://store-jp.nintendo.com/" target="_blank" class="link-btn">応募</a></td>
             <td><div class="period">6/3 12:15〜6/11 11:00</div></td>
             <td><div class="condition">第3回落選者は自動引継ぎ。変更・キャンセルは要再申込</div></td>
             <td><div class="result">6/17午後</div></td>
             <td><div class="deadline">〜7/4</div></td>
-            <td><a href="https://store-jp.nintendo.com/" target="_blank" class="link-btn">応募</a></td>
           </tr>
 
           <tr data-status="active" class="urgent">
@@ -548,12 +550,11 @@
               <div class="store-type">コンビニ系EC</div>
             </td>
             <td><span class="status status-active">受付中</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://7net.omni7.jp/" target="_blank" class="link-btn">応募</a></td>
             <td><div class="period">5/30 15:00〜6/11 15:00</div></td>
             <td><div class="condition">税抜1,000円以上購入履歴＋メルマガ受信設定</div></td>
             <td><div class="result">6/20 19:00</div></td>
             <td><div class="deadline">7月上旬お届け</div></td>
-            <td><a href="https://7net.omni7.jp/" target="_blank" class="link-btn">応募</a></td>
           </tr>
 
           <tr data-status="ongoing">
@@ -562,12 +563,11 @@
               <div class="store-type">EC大手</div>
             </td>
             <td><span class="status status-ongoing">実施中</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.amazon.co.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">4/24〜（招待制）</div></td>
             <td><div class="condition">Amazonアカウント。招待リクエスト有効期間3ヶ月</div></td>
             <td><div class="result">随時メール通知</div></td>
             <td><div class="deadline">招待後72時間</div></td>
-            <td><a href="https://www.amazon.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="upcoming">
@@ -576,12 +576,11 @@
               <div class="store-type">EC大手</div>
             </td>
             <td><span class="status status-upcoming">開始予定</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">6/4 12:00〜6/9 11:59</div></td>
             <td><div class="condition">楽天会員＋購入履歴。過去当選者は対象外。1世帯1名限り</div></td>
             <td><div class="result">未定</div></td>
             <td><div class="deadline">未定</div></td>
-            <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="upcoming">
@@ -590,12 +589,11 @@
               <div class="store-type">家電EC</div>
             </td>
             <td><span class="status status-upcoming">開始予定</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://xprice.co.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">6/10 12:00〜6/16 23:59</div></td>
             <td><div class="condition">詳細は特設ページにて確認必要</div></td>
             <td><div class="result">6/19 12:00以降</div></td>
             <td><div class="deadline">通知後案内</div></td>
-            <td><a href="https://xprice.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -604,12 +602,11 @@
               <div class="store-type">家電量販店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.yodobashi.com/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/9〜5/12 10:59</div></td>
             <td><div class="condition">1年間で5万円以上購入履歴。ゴールドカード・プラスで当選率優遇</div></td>
             <td><div class="result">発表済み</div></td>
             <td><div class="deadline">完了</div></td>
-            <td><a href="https://www.yodobashi.com/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -618,12 +615,11 @@
               <div class="store-type">家電量販店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.biccamera.com/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/22〜5/25</div></td>
             <td><div class="condition">公式アプリ登録＋ポイントカード登録＋5,000円以上購入履歴</div></td>
             <td><div class="result">6/2完了</div></td>
             <td><div class="deadline">6/5〜6/8完了</div></td>
-            <td><a href="https://www.biccamera.com/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -632,17 +628,16 @@
               <div class="store-type">家電量販店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.yamada-denki.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/29 22:00〜6/1 23:59</div></td>
             <td><div class="condition">デジタル会員アプリ登録＋購入履歴。指定店舗受取限定</div></td>
             <td><div class="result">6/13,20,27（3回チャンス）</div></td>
             <td><div class="deadline">通知後案内</div></td>
-            <td><a href="https://www.yamada-denki.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <!-- 地域限定版 -->
           <tr class="section-header">
-            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>📍 地域限定 抽選販売</strong></td>
+            <td colspan="7" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>📍 地域限定 抽選販売</strong></td>
           </tr>
 
           <tr data-status="ended">
@@ -651,12 +646,11 @@
               <div class="store-type">近畿・北陸・東海</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.heiwado.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/8午前〜5/11 23:59</div></td>
             <td><div class="condition">HOPカード/アプリ会員＋1-3月購入履歴。指定店舗受取</div></td>
             <td><div class="result">5/29完了</div></td>
             <td><div class="deadline">6/5〜6/8完了</div></td>
-            <td><a href="https://www.heiwado.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -665,12 +659,11 @@
               <div class="store-type">書店チェーン（岐阜等）</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.sanyodo.ne.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/27〜6/1</div></td>
             <td><div class="condition">三洋堂サイト会員＋1年間購入・レンタル実績。1人1回・1店舗限り</div></td>
             <td><div class="result">6/11完了</div></td>
             <td><div class="deadline">6/14〜6/15完了</div></td>
-            <td><a href="https://www.sanyodo.ne.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -679,17 +672,16 @@
               <div class="store-type">東海地方エンタメ店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
+            <td><a href="https://www.wondergoo.com/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/27 10:00〜6/1 17:00</div></td>
             <td><div class="condition">応募フォーム利用。1世帯全店で1点・1回限り</div></td>
             <td><div class="result">6/12完了</div></td>
             <td><div class="deadline">6/14〜6/16完了</div></td>
-            <td><a href="https://www.wondergoo.com/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <!-- その他実施店舗 -->
           <tr class="section-header">
-            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🔍 その他実施済み・予定店舗</strong></td>
+            <td colspan="7" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🔍 その他実施済み・予定店舗</strong></td>
           </tr>
 
           <tr data-status="ended">
@@ -698,12 +690,11 @@
               <div class="store-type">玩具専門店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
+            <td><a href="https://www.toysrus.co.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">〜6/2</div></td>
             <td><div class="condition">スターカード会員＋購入実績</div></td>
             <td><div class="result">6/13</div></td>
             <td><div class="deadline">通知後案内</div></td>
-            <td><a href="https://www.toysrus.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
           <tr data-status="ended">
@@ -712,12 +703,11 @@
               <div class="store-type">エンタメ店</div>
             </td>
             <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
+            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">確認</a></td>
             <td><div class="period">5/28〜6/9</div></td>
             <td><div class="condition">ゲオアプリ＋Ponta連携</div></td>
             <td><div class="result">6/13</div></td>
             <td><div class="deadline">6/14〜6/18</div></td>
-            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
 
         </tbody>
