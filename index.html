@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nintendo Switch 2 抽選情報一覧（2025年5月29日時点）</title>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1466115951226021"
-     crossorigin="anonymous"></script>
+  <title>Nintendo Switch 2 抽選受付まとめ</title>
   <style>
     * {
       margin: 0;
@@ -15,37 +13,106 @@
 
     body {
       font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
-      background: #fafafa;
+      background: linear-gradient(135deg, #fafafa 0%, #f0f2f5 100%);
       color: #333;
       line-height: 1.5;
       padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="0.5" fill="rgba(74,85,104,0.03)"/><circle cx="80" cy="20" r="0.3" fill="rgba(74,85,104,0.03)"/><circle cx="50" cy="50" r="0.4" fill="rgba(74,85,104,0.03)"/><circle cx="30" cy="80" r="0.3" fill="rgba(74,85,104,0.03)"/><circle cx="70" cy="70" r="0.5" fill="rgba(74,85,104,0.03)"/></svg>');
+      animation: float 30s infinite linear;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateX(-50px) translateY(-50px); }
+      100% { transform: translateX(50px) translateY(50px); }
     }
 
     .container {
-      max-width: 1400px;
+      max-width: 1600px;
       margin: 0 auto;
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
       overflow: hidden;
+      position: relative;
+      z-index: 1;
+      animation: slideUp 0.6s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .header {
-      background: #4a5568;
+      background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
       color: white;
       padding: 24px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
     h1 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 600;
       margin-bottom: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .subtitle {
       font-size: 0.95rem;
-      opacity: 0.9;
+      opacity: 0.95;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .update-note {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      background: rgba(255,255,255,0.15);
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-top: 8px;
+      position: relative;
+      z-index: 1;
     }
 
     .filter-section {
@@ -61,24 +128,44 @@
     }
 
     .filter-btn {
-      padding: 6px 14px;
+      padding: 8px 16px;
       border: 1px solid #dee2e6;
       background: white;
       border-radius: 4px;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.3s ease;
       font-size: 0.9rem;
       color: #495057;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .filter-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(73, 80, 87, 0.1), transparent);
+      transition: left 0.4s;
+    }
+
+    .filter-btn:hover::before {
+      left: 100%;
     }
 
     .filter-btn.active {
       background: #495057;
       color: white;
       border-color: #495057;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 8px rgba(73, 80, 87, 0.2);
     }
 
     .filter-btn:hover {
       background: #e9ecef;
+      transform: translateY(-1px);
     }
 
     .filter-btn.active:hover {
@@ -93,52 +180,92 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      font-size: 14px;
-      table-layout: fixed;
+      font-size: 13px;
+      border-spacing: 0;
     }
 
     th {
       background: #f8f9fa;
       color: #495057;
-      padding: 16px 12px;
+      padding: 16px 10px;
       font-weight: 600;
       text-align: left;
       border-bottom: 2px solid #dee2e6;
       white-space: nowrap;
       vertical-align: middle;
+      position: relative;
+    }
+
+    th::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #495057;
+      transition: width 0.3s ease;
+    }
+
+    th:hover::after {
+      width: 100%;
     }
 
     td {
-      padding: 14px 12px;
+      padding: 12px 10px !important;
       border-bottom: 1px solid #f1f3f4;
       vertical-align: middle;
       text-align: left;
+      transition: all 0.2s ease;
     }
 
     tr:hover {
       background: #f8f9fa;
+      transform: scale(1.001);
+    }
+
+    .urgent {
+      background: linear-gradient(90deg, #fff5f5, #ffffff);
+      border-left: 3px solid #dc3545;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
     }
 
     .store-name {
       font-weight: 600;
       color: #2d3748;
-      font-size: 15px;
+      font-size: 14px;
+    }
+
+    .store-type {
+      font-size: 11px;
+      color: #6c757d;
+      margin-top: 2px;
     }
 
     .status {
       display: inline-block;
       padding: 4px 8px;
       border-radius: 4px;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 500;
       text-align: center;
-      min-width: 60px;
+      min-width: 65px;
     }
 
     .status-active {
       background: #d4edda;
       color: #155724;
       border: 1px solid #c3e6cb;
+      animation: glow 2s infinite;
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(21, 87, 36, 0.3); }
+      50% { box-shadow: 0 0 20px rgba(21, 87, 36, 0.6); }
     }
 
     .status-upcoming {
@@ -153,48 +280,79 @@
       border: 1px solid #f1b0b7;
     }
 
+    .status-ongoing {
+      background: #cce5ff;
+      color: #0056b3;
+      border: 1px solid #99d3ff;
+    }
+
     .model {
       background: #e9ecef;
       color: #495057;
-      padding: 4px 8px;
+      padding: 3px 6px;
       border-radius: 4px;
-      font-size: 13px;
+      font-size: 11px;
       display: inline-block;
+      margin: 1px;
+      transition: all 0.2s ease;
+    }
+
+    .model:hover {
+      background: #dee2e6;
+      transform: scale(1.05);
     }
 
     .period {
       font-weight: 500;
       color: #495057;
+      font-size: 12px;
     }
 
     .condition {
-      font-size: 13px;
+      font-size: 11px;
       color: #6c757d;
-      max-width: 200px;
+      line-height: 1.4;
     }
 
     .result, .deadline {
-      font-size: 13px;
+      font-size: 12px;
       color: #495057;
     }
 
     .link-btn {
       background: #495057;
       color: white;
-      padding: 6px 12px;
+      padding: 5px 10px;
       border-radius: 4px;
       text-decoration: none;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 500;
-      transition: background 0.2s;
+      transition: all 0.3s ease;
       display: inline-block;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .link-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.4s;
+    }
+
+    .link-btn:hover::before {
+      left: 100%;
     }
 
     .link-btn:hover {
       background: #343a40;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(52, 58, 64, 0.3);
     }
-
-
 
     .stats {
       display: flex;
@@ -208,6 +366,11 @@
 
     .stat-item {
       text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .stat-item:hover {
+      transform: translateY(-2px);
     }
 
     .stat-number {
@@ -222,10 +385,45 @@
       margin-top: 2px;
     }
 
+    .section-header {
+      background: #e9ecef;
+      padding: 8px 16px;
+      font-weight: 600;
+      color: #495057;
+      font-size: 13px;
+      border-top: 2px solid #dee2e6;
+    }
+
+    .section-header td {
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .notes {
+      padding: 16px 24px;
+      background: #fff9e6;
+      border-top: 1px solid #e9ecef;
+      font-size: 12px;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .notes h3 {
+      color: #856404;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .notes ul {
+      margin-left: 16px;
+    }
+
+    .notes li {
+      margin-bottom: 4px;
+    }
+
     @media (max-width: 1200px) {
       .condition {
-        max-width: 150px;
-        font-size: 12px;
+        font-size: 10px;
       }
     }
 
@@ -243,8 +441,8 @@
       }
       
       th, td {
-        padding: 10px 8px;
-        font-size: 12px;
+        padding: 8px 6px;
+        font-size: 11px;
       }
       
       .filter-section {
@@ -257,8 +455,7 @@
       }
       
       .condition {
-        max-width: 120px;
-        font-size: 11px;
+        font-size: 9px;
       }
     }
 
@@ -271,7 +468,8 @@
   <div class="container">
     <div class="header">
       <h1>Nintendo Switch 2 抽選情報一覧</h1>
-      <div class="subtitle">2025年5月29日現在</div>
+      <div class="subtitle">2025年6月3日現在（最新レポート完全版）</div>
+      <div class="update-note">📅 リアルタイム更新 | 🔄 全国版・地域限定版完全対応</div>
     </div>
 
     <div class="filter-section">
@@ -279,6 +477,7 @@
         <button class="filter-btn active" onclick="filterRows('all')">すべて表示</button>
         <button class="filter-btn" onclick="filterRows('active')">受付中</button>
         <button class="filter-btn" onclick="filterRows('upcoming')">開始予定</button>
+        <button class="filter-btn" onclick="filterRows('ongoing')">実施中</button>
         <button class="filter-btn" onclick="filterRows('ended')">終了済み</button>
       </div>
     </div>
@@ -287,144 +486,221 @@
       <table>
         <thead>
           <tr>
-            <th style="width: 12%;">店舗名</th>
-            <th style="width: 10%;">ステータス</th>
-            <th style="width: 18%;">対象モデル</th>
-            <th style="width: 12%;">受付期間</th>
-            <th style="width: 18%;">応募条件</th>
-            <th style="width: 10%;">結果発表</th>
-            <th style="width: 12%;">購入期限</th>
-            <th style="width: 8%;">応募</th>
+            <th>店舗名</th>
+            <th>ステータス</th>
+            <th>対象モデル</th>
+            <th>受付期間</th>
+            <th>応募条件</th>
+            <th>結果発表</th>
+            <th>購入期限</th>
+            <th>応募</th>
           </tr>
         </thead>
         <tbody id="tableBody">
+          <!-- 全国版 -->
+          <tr class="section-header">
+            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🌏 全国版 抽選販売</strong></td>
+          </tr>
+          
           <tr data-status="active" class="urgent">
-            <td><div class="store-name">トイザらス</div></td>
+            <td>
+              <div class="store-name">マイニンテンドーストア</div>
+              <div class="store-type">任天堂公式</div>
+            </td>
             <td><span class="status status-active">受付中</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">6/3 12:15〜6/11 11:00</div></td>
+            <td><div class="condition">第3回落選者は自動引継ぎ。変更・キャンセルは要再申込</div></td>
+            <td><div class="result">6/17午後</div></td>
+            <td><div class="deadline">〜7/4</div></td>
+            <td><a href="https://store-jp.nintendo.com/" target="_blank" class="link-btn">応募</a></td>
+          </tr>
+
+          <tr data-status="active" class="urgent">
+            <td>
+              <div class="store-name">セブンネット</div>
+              <div class="store-type">コンビニ系EC</div>
+            </td>
+            <td><span class="status status-active">受付中</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/30 15:00〜6/11 15:00</div></td>
+            <td><div class="condition">税抜1,000円以上購入履歴＋メルマガ受信設定</div></td>
+            <td><div class="result">6/20 19:00</div></td>
+            <td><div class="deadline">7月上旬お届け</div></td>
+            <td><a href="https://7net.omni7.jp/" target="_blank" class="link-btn">応募</a></td>
+          </tr>
+
+          <tr data-status="ongoing">
+            <td>
+              <div class="store-name">Amazon</div>
+              <div class="store-type">EC大手</div>
+            </td>
+            <td><span class="status status-ongoing">実施中</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">4/24〜（招待制）</div></td>
+            <td><div class="condition">Amazonアカウント。招待リクエスト有効期間3ヶ月</div></td>
+            <td><div class="result">随時メール通知</div></td>
+            <td><div class="deadline">招待後72時間</div></td>
+            <td><a href="https://www.amazon.co.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="upcoming">
+            <td>
+              <div class="store-name">楽天ブックス</div>
+              <div class="store-type">EC大手</div>
+            </td>
+            <td><span class="status status-upcoming">開始予定</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">6/4 12:00〜6/9 11:59</div></td>
+            <td><div class="condition">楽天会員＋購入履歴。過去当選者は対象外。1世帯1名限り</div></td>
+            <td><div class="result">未定</div></td>
+            <td><div class="deadline">未定</div></td>
+            <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="upcoming">
+            <td>
+              <div class="store-name">XPRICE本店</div>
+              <div class="store-type">家電EC</div>
+            </td>
+            <td><span class="status status-upcoming">開始予定</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">6/10 12:00〜6/16 23:59</div></td>
+            <td><div class="condition">詳細は特設ページにて確認必要</div></td>
+            <td><div class="result">6/19 12:00以降</div></td>
+            <td><div class="deadline">通知後案内</div></td>
+            <td><a href="https://xprice.co.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">ヨドバシカメラ</div>
+              <div class="store-type">家電量販店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/9〜5/12 10:59</div></td>
+            <td><div class="condition">1年間で5万円以上購入履歴。ゴールドカード・プラスで当選率優遇</div></td>
+            <td><div class="result">発表済み</div></td>
+            <td><div class="deadline">完了</div></td>
+            <td><a href="https://www.yodobashi.com/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">ビックカメラ</div>
+              <div class="store-type">家電量販店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/22〜5/25</div></td>
+            <td><div class="condition">公式アプリ登録＋ポイントカード登録＋5,000円以上購入履歴</div></td>
+            <td><div class="result">6/2完了</div></td>
+            <td><div class="deadline">6/5〜6/8完了</div></td>
+            <td><a href="https://www.biccamera.com/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">ヤマダデンキ</div>
+              <div class="store-type">家電量販店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/29 22:00〜6/1 23:59</div></td>
+            <td><div class="condition">デジタル会員アプリ登録＋購入履歴。指定店舗受取限定</div></td>
+            <td><div class="result">6/13,20,27（3回チャンス）</div></td>
+            <td><div class="deadline">通知後案内</div></td>
+            <td><a href="https://www.yamada-denki.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <!-- 地域限定版 -->
+          <tr class="section-header">
+            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>📍 地域限定 抽選販売</strong></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">平和堂</div>
+              <div class="store-type">近畿・北陸・東海</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/8午前〜5/11 23:59</div></td>
+            <td><div class="condition">HOPカード/アプリ会員＋1-3月購入履歴。指定店舗受取</div></td>
+            <td><div class="result">5/29完了</div></td>
+            <td><div class="deadline">6/5〜6/8完了</div></td>
+            <td><a href="https://www.heiwado.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">三洋堂書店</div>
+              <div class="store-type">書店チェーン（岐阜等）</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/27〜6/1</div></td>
+            <td><div class="condition">三洋堂サイト会員＋1年間購入・レンタル実績。1人1回・1店舗限り</div></td>
+            <td><div class="result">6/11完了</div></td>
+            <td><div class="deadline">6/14〜6/15完了</div></td>
+            <td><a href="https://www.sanyodo.ne.jp/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">WonderGOO</div>
+              <div class="store-type">東海地方エンタメ店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><span class="model">Switch 2（各種）</span></td>
+            <td><div class="period">5/27 10:00〜6/1 17:00</div></td>
+            <td><div class="condition">応募フォーム利用。1世帯全店で1点・1回限り</div></td>
+            <td><div class="result">6/12完了</div></td>
+            <td><div class="deadline">6/14〜6/16完了</div></td>
+            <td><a href="https://www.wondergoo.com/" target="_blank" class="link-btn">確認</a></td>
+          </tr>
+
+          <!-- その他実施店舗 -->
+          <tr class="section-header">
+            <td colspan="8" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>🔍 その他実施済み・予定店舗</strong></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">トイザらス</div>
+              <div class="store-type">玩具専門店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
             <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
             <td><div class="period">〜6/2</div></td>
             <td><div class="condition">スターカード会員＋購入実績</div></td>
             <td><div class="result">6/13</div></td>
             <td><div class="deadline">通知後案内</div></td>
-            <td><a href="https://www.toysrus.co.jp/ja-jp/events/event-277.html" target="_blank" class="link-btn">応募</a></td>
+            <td><a href="https://www.toysrus.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
-          <tr data-status="active">
-            <td><div class="store-name">ゲオ</div></td>
-            <td><span class="status status-active">受付中</span></td>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">ゲオ</div>
+              <div class="store-type">エンタメ店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
             <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
             <td><div class="period">5/28〜6/9</div></td>
             <td><div class="condition">ゲオアプリ＋Ponta連携</div></td>
             <td><div class="result">6/13</div></td>
             <td><div class="deadline">6/14〜6/18</div></td>
-            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">応募</a></td>
+            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">確認</a></td>
           </tr>
-          <tr data-status="active">
-            <td><div class="store-name">Amazon</div></td>
-            <td><span class="status status-active">実施中</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">随時（招待制）</div></td>
-            <td><div class="condition">プライム会員など</div></td>
-            <td><div class="result">招待メール順次</div></td>
-            <td><div class="deadline">招待後48時間</div></td>
-            <td><a href="https://www.amazon.co.jp/" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="upcoming">
-            <td><div class="store-name">セブンネット</div></td>
-            <td><span class="status status-upcoming">開始予定</span></td>
-            <td><span class="model">Switch 2（予定）</span></td>
-            <td><div class="period">5/30以降予定</div></td>
-            <td><div class="condition">詳細未定</div></td>
-            <td><div class="result">未定</div></td>
-            <td><div class="deadline">未定</div></td>
-            <td><a href="https://7net.omni7.jp/" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="upcoming">
-            <td><div class="store-name">楽天ブックス</div></td>
-            <td><span class="status status-upcoming">開始予定</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">6/4〜6/9</div></td>
-            <td><div class="condition">楽天会員＋実績あり</div></td>
-            <td><div class="result">未定</div></td>
-            <td><div class="deadline">未定</div></td>
-            <td><a href="https://books.rakuten.co.jp/event/switch2/" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">ヨドバシカメラ</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">5/9〜5/12</div></td>
-            <td><div class="condition">会員＆直近1年5万円以上購入</div></td>
-            <td><div class="result">5/13</div></td>
-            <td><div class="deadline">5/18</div></td>
-            <td><a href="https://limited.yodobashi.com/entry/shared/" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">ビックカメラ</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・同梱）</span></td>
-            <td><div class="period">5/22〜5/25</div></td>
-            <td><div class="condition">アプリ会員＋5千円以上購入実績</div></td>
-            <td><div class="result">6/2</div></td>
-            <td><div class="deadline">6/8</div></td>
-            <td><a href="https://www.biccamera.com/bc/c/sale/special/lottery/switch2_order.html" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">ヤマダ電機</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">4/24〜4/27</div></td>
-            <td><div class="condition">デジタル会員＋購入履歴あり</div></td>
-            <td><div class="result">5/2</div></td>
-            <td><div class="deadline">5/18</div></td>
-            <td><a href="https://www.yamada-denki.jp/denki/search/srDisp.do?_method=search&upc=4907810186121" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">イオンスタイル</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（各種）</span></td>
-            <td><div class="period">5/26〜5/28</div></td>
-            <td><div class="condition">会員登録・カード決済必須</div></td>
-            <td><div class="result">6/4, 6/11</div></td>
-            <td><div class="deadline">6/5, 6/12</div></td>
-            <td><a href="https://aeonretail.com/Page/kids-attention0418.aspx" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">ジョーシン</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">5/17〜5/23</div></td>
-            <td><div class="condition">VIP/プラチナ会員限定</div></td>
-            <td><div class="result">6/6</div></td>
-            <td><div class="deadline">6/14〜6/19</div></td>
-            <td><a href="https://joshinweb.jp/web/" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">ノジマ</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">5/15〜5/25</div></td>
-            <td><div class="condition">アプリ内抽選表示者限定</div></td>
-            <td><div class="result">5/27</div></td>
-            <td><div class="deadline">6/1まで</div></td>
-            <td><a href="https://www.nojima.co.jp/faq/detail/7506" target="_blank" class="link-btn">確認</a></td>
-          </tr>
-          <tr data-status="ended">
-            <td><div class="store-name">エディオン</div></td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><span class="model">Switch 2（通常・ワールドセット）</span></td>
-            <td><div class="period">4/24〜5/11</div></td>
-            <td><div class="condition">対象会員（アプリ/保証など）</div></td>
-            <td><div class="result">未公表</div></td>
-            <td><div class="deadline">通知後案内</div></td>
-            <td><a href="https://www.edion.com/store/edion.jsp" target="_blank" class="link-btn">確認</a></td>
-          </tr>
+
         </tbody>
       </table>
     </div>
 
     <div class="stats">
       <div class="stat-item">
-        <div class="stat-number">3</div>
+        <div class="stat-number">2</div>
         <div class="stat-label">受付中</div>
       </div>
       <div class="stat-item">
@@ -432,15 +708,33 @@
         <div class="stat-label">開始予定</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">7</div>
+        <div class="stat-number">1</div>
+        <div class="stat-label">実施中</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">9</div>
         <div class="stat-label">終了済み</div>
       </div>
+    </div>
+
+    <div class="notes">
+      <h3>📋 重要な注意事項とコツ</h3>
+      <ul>
+        <li><strong>迅速な対応:</strong> 当選通知から購入期限まで非常に短期間（48-72時間）の場合が多いため、メール確認を頻繁に行う</li>
+        <li><strong>事前準備:</strong> 各店舗の会員登録と購入履歴作りを事前に行う（条件として求められることが多い）</li>
+        <li><strong>本人確認:</strong> 店舗受け取り時は公的身分証明書（運転免許証、マイナンバーカード等）が必須</li>
+        <li><strong>転売対策:</strong> 複数アカウント、転売目的の応募は無効。1世帯1回限りの店舗が多い</li>
+        <li><strong>地域店舗:</strong> 地域密着型店舗は地元顧客を優遇する傾向。該当地域在住者は積極的に活用</li>
+        <li><strong>継続チェック:</strong> 新規抽選販売の情報は各店舗公式サイト・SNSで随時発表される</li>
+        <li><strong>Amazon特別注意:</strong> 招待メールを見逃すと購入機会を失うため、メッセージセンターの継続監視が必須</li>
+        <li><strong>複数応募戦略:</strong> 応募条件が異なる複数の店舗に申し込むことで当選確率を高められる</li>
+      </ul>
     </div>
   </div>
 
   <script>
     function filterRows(status) {
-      const rows = document.querySelectorAll('#tableBody tr');
+      const rows = document.querySelectorAll('#tableBody tr:not(.section-header)');
       const buttons = document.querySelectorAll('.filter-btn');
       
       // ボタンのアクティブ状態を更新
@@ -458,6 +752,12 @@
             row.style.display = 'none';
           }
         }
+      });
+
+      // セクションヘッダーは常に表示
+      const sectionHeaders = document.querySelectorAll('#tableBody .section-header');
+      sectionHeaders.forEach(header => {
+        header.style.display = '';
       });
     }
   </script>
