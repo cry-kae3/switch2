@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nintendo Switch 2 抽選受付まとめ</title>
+  <title>Nintendo Switch 2 抽選受付まとめ（完全版）</title>
   <style>
     * {
       margin: 0;
@@ -305,6 +305,12 @@
       border: 1px solid #99d3ff;
     }
 
+    .status-waiting {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+    }
+
     .model {
       background: #e9ecef;
       color: #495057;
@@ -497,9 +503,9 @@
 <body>
   <div class="container">
     <div class="header">
-      <h1>Nintendo Switch 2 抽選情報一覧</h1>
-      <div class="subtitle">2025年6月3日現在（最新レポート完全版）</div>
-      <div class="update-note">📅 リアルタイム更新 | 🔄 全国版・地域限定版完全対応</div>
+      <h1>Nintendo Switch 2 抽選情報一覧（完全版）</h1>
+      <div class="subtitle">2025年6月4日現在（最新レポート完全版）</div>
+      <div class="update-note">📅 リアルタイム更新 | 🔄 全国版・地域限定版完全対応 | 📋 詳細レポート統合版</div>
     </div>
 
     <div class="filter-section">
@@ -508,6 +514,7 @@
         <button class="filter-btn" onclick="filterRows('active')">受付中</button>
         <button class="filter-btn" onclick="filterRows('upcoming')">開始予定</button>
         <button class="filter-btn" onclick="filterRows('ongoing')">実施中</button>
+        <button class="filter-btn" onclick="filterRows('waiting')">発表待ち</button>
         <button class="filter-btn" onclick="filterRows('ended')">終了済み</button>
       </div>
     </div>
@@ -535,40 +542,40 @@
           <tr data-status="active" class="urgent">
             <td>
               <div class="store-name">マイニンテンドーストア</div>
-              <div class="store-type">任天堂公式</div>
+              <div class="store-type">任天堂公式 第4回</div>
             </td>
             <td><span class="status status-active">受付中</span></td>
             <td><a href="https://store-jp.nintendo.com/" target="_blank" class="link-btn">応募リンク</a></td>
             <td><div class="period">6/3 12:15〜6/11 11:00</div></td>
-            <td><div class="condition">第3回落選者は自動引継ぎ。変更・キャンセルは要再申込</div></td>
-            <td><div class="result">6/17午後</div></td>
-            <td><div class="deadline">〜7/4</div></td>
+            <td><div class="condition">第3回落選者は自動引継ぎ。変更・キャンセルは「注文履歴を削除」から要再申込</div></td>
+            <td><div class="result">6/17（火）午後以降</div></td>
+            <td><div class="deadline">〜7/4（金）まで</div></td>
           </tr>
 
           <tr data-status="active" class="urgent">
             <td>
               <div class="store-name">セブンネット</div>
-              <div class="store-type">コンビニ系EC</div>
+              <div class="store-type">コンビニ系EC 第2回</div>
             </td>
             <td><span class="status status-active">受付中</span></td>
             <td><a href="https://7net.omni7.jp/" target="_blank" class="link-btn">応募リンク</a></td>
             <td><div class="period">5/30 15:00〜6/11 15:00</div></td>
-            <td><div class="condition">税抜1,000円以上購入履歴＋メルマガ受信設定</div></td>
-            <td><div class="result">6/20 19:00</div></td>
-            <td><div class="deadline">7月上旬お届け</div></td>
+            <td><div class="condition">2024/5/30〜2025/6/11期間中に税抜1,000円以上購入履歴(電子書籍除く)＋2025/6/15 23:59までに商品受取完了＋メルマガ受信設定</div></td>
+            <td><div class="result">6/20（木）19:00まで</div></td>
+            <td><div class="deadline">7月上旬より順次お届け</div></td>
           </tr>
 
           <tr data-status="ongoing">
             <td>
               <div class="store-name">Amazon</div>
-              <div class="store-type">EC大手</div>
+              <div class="store-type">EC大手 招待制</div>
             </td>
             <td><span class="status status-ongoing">実施中</span></td>
             <td><a href="https://www.amazon.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">4/24〜（招待制）</div></td>
-            <td><div class="condition">Amazonアカウント。招待リクエスト有効期間3ヶ月</div></td>
-            <td><div class="result">随時メール通知</div></td>
-            <td><div class="deadline">招待後72時間</div></td>
+            <td><div class="period">4/24〜（招待制継続）</div></td>
+            <td><div class="condition">Amazonアカウント。招待リクエスト有効期間3ヶ月。招待キャンセル後は同商品再注文不可</div></td>
+            <td><div class="result">随時招待メール通知（6/3にも送信実績）</div></td>
+            <td><div class="deadline">招待メール受信後72時間以内</div></td>
           </tr>
 
           <tr data-status="upcoming">
@@ -579,8 +586,8 @@
             <td><span class="status status-upcoming">開始予定</span></td>
             <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
             <td><div class="period">6/4 12:00〜6/9 11:59</div></td>
-            <td><div class="condition">楽天会員＋購入履歴。過去当選者は対象外。1世帯1名限り</div></td>
-            <td><div class="result">未定</div></td>
+            <td><div class="condition">楽天会員＋指定期間内楽天ブックス購入履歴(楽天Kobo・ダウンロード商品除く)。過去Nintendo Switch 2当選者は対象外。1商品1回・1世帯1名限り</div></td>
+            <td><div class="result">未定（特設ページにて発表予定）</div></td>
             <td><div class="deadline">未定</div></td>
           </tr>
 
@@ -593,8 +600,21 @@
             <td><a href="https://xprice.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
             <td><div class="period">6/10 12:00〜6/16 23:59</div></td>
             <td><div class="condition">詳細は特設ページにて確認必要</div></td>
-            <td><div class="result">6/19 12:00以降</div></td>
-            <td><div class="deadline">通知後案内</div></td>
+            <td><div class="result">6/19（木）12:00以降順次</div></td>
+            <td><div class="deadline">マイページ・メールにて通知後案内</div></td>
+          </tr>
+
+          <tr data-status="waiting">
+            <td>
+              <div class="store-name">ヤマダデンキ</div>
+              <div class="store-type">家電量販店 2次抽選</div>
+            </td>
+            <td><span class="status status-waiting">発表待ち</span></td>
+            <td><a href="https://www.yamada-denki.jp/" target="_blank" class="link-btn">確認リンク</a></td>
+            <td><div class="period">5/29 22:00〜6/1 23:59（受付終了）</div></td>
+            <td><div class="condition">2025年4月末日までにヤマダデジタル会員アプリ本登録完了＋2024/5/1〜2025/6/1期間内の店舗またはウェブコム購入実績＋抽選登録時指定店舗受取了承</div></td>
+            <td><div class="result">第1回：6/13（金）18:00〜6/15（日）<br>第2回：6/20（金）18:00〜6/22（日）<br>第3回：6/27（金）18:00〜6/29（日）</div></td>
+            <td><div class="deadline">当選通知後案内（3回チャンス制）</div></td>
           </tr>
 
           <tr data-status="ended">
@@ -623,22 +643,35 @@
             <td><div class="deadline">6/5〜6/8完了</div></td>
           </tr>
 
-          <tr data-status="ended">
-            <td>
-              <div class="store-name">ヤマダデンキ</div>
-              <div class="store-type">家電量販店</div>
-            </td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><a href="https://www.yamada-denki.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">5/29 22:00〜6/1 23:59</div></td>
-            <td><div class="condition">デジタル会員アプリ登録＋購入履歴。指定店舗受取限定</div></td>
-            <td><div class="result">6/13,20,27（3回チャンス）</div></td>
-            <td><div class="deadline">通知後案内</div></td>
-          </tr>
-
           <!-- 地域限定版 -->
           <tr class="section-header">
             <td colspan="7" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>📍 地域限定 抽選販売</strong></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">三洋堂書店</div>
+              <div class="store-type">書店チェーン（岐阜県等）第2回</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><a href="https://www.sanyodo.ne.jp/" target="_blank" class="link-btn">確認リンク</a></td>
+            <td><div class="period">5/27〜6/1（受付終了）</div></td>
+            <td><div class="condition">三洋堂サイト会員＋2025年6月1日までの1年間にカードバーコードスキャンでの購入・レンタル実績。1人1回・1店舗限り</div></td>
+            <td><div class="result">6/11（水）当選者のみメール</div></td>
+            <td><div class="deadline">6/14（土）〜6/15（日）有人営業時間中（完了）</div></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">WonderGOO</div>
+              <div class="store-type">東海地方エンタメ店 第2回</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><a href="https://www.wondergoo.com/" target="_blank" class="link-btn">確認リンク</a></td>
+            <td><div class="period">5/27 10:00〜6/1 17:00（受付終了）</div></td>
+            <td><div class="condition">応募期間内公開の応募フォームより応募。1世帯全店で対象商品1点・1回限り</div></td>
+            <td><div class="result">6/12（木）までにメール・電話通知（当選者のみ）</div></td>
+            <td><div class="deadline">6/14（土）〜6/16（月）（完了）</div></td>
           </tr>
 
           <tr data-status="ended">
@@ -652,32 +685,6 @@
             <td><div class="condition">HOPカード/アプリ会員＋1-3月購入履歴。指定店舗受取</div></td>
             <td><div class="result">5/29完了</div></td>
             <td><div class="deadline">6/5〜6/8完了</div></td>
-          </tr>
-
-          <tr data-status="ended">
-            <td>
-              <div class="store-name">三洋堂書店</div>
-              <div class="store-type">書店チェーン（岐阜等）</div>
-            </td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><a href="https://www.sanyodo.ne.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">5/27〜6/1</div></td>
-            <td><div class="condition">三洋堂サイト会員＋1年間購入・レンタル実績。1人1回・1店舗限り</div></td>
-            <td><div class="result">6/11完了</div></td>
-            <td><div class="deadline">6/14〜6/15完了</div></td>
-          </tr>
-
-          <tr data-status="ended">
-            <td>
-              <div class="store-name">WonderGOO</div>
-              <div class="store-type">東海地方エンタメ店</div>
-            </td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><a href="https://www.wondergoo.com/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">5/27 10:00〜6/1 17:00</div></td>
-            <td><div class="condition">応募フォーム利用。1世帯全店で1点・1回限り</div></td>
-            <td><div class="result">6/12完了</div></td>
-            <td><div class="deadline">6/14〜6/16完了</div></td>
           </tr>
 
           <!-- その他実施店舗 -->
@@ -730,24 +737,16 @@
         <div class="stat-label">実施中</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">9</div>
+        <div class="stat-number">1</div>
+        <div class="stat-label">発表待ち</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">8</div>
         <div class="stat-label">終了済み</div>
       </div>
     </div>
 
-    <div class="notes">
-      <h3>📋 重要な注意事項とコツ</h3>
-      <ul>
-        <li><strong>迅速な対応:</strong> 当選通知から購入期限まで非常に短期間（48-72時間）の場合が多いため、メール確認を頻繁に行う</li>
-        <li><strong>事前準備:</strong> 各店舗の会員登録と購入履歴作りを事前に行う（条件として求められることが多い）</li>
-        <li><strong>本人確認:</strong> 店舗受け取り時は公的身分証明書（運転免許証、マイナンバーカード等）が必須</li>
-        <li><strong>転売対策:</strong> 複数アカウント、転売目的の応募は無効。1世帯1回限りの店舗が多い</li>
-        <li><strong>地域店舗:</strong> 地域密着型店舗は地元顧客を優遇する傾向。該当地域在住者は積極的に活用</li>
-        <li><strong>継続チェック:</strong> 新規抽選販売の情報は各店舗公式サイト・SNSで随時発表される</li>
-        <li><strong>Amazon特別注意:</strong> 招待メールを見逃すと購入機会を失うため、メッセージセンターの継続監視が必須</li>
-        <li><strong>複数応募戦略:</strong> 応募条件が異なる複数の店舗に申し込むことで当選確率を高められる</li>
-      </ul>
-    </div>
+
   </div>
 
   <script>
