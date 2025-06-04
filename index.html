@@ -423,29 +423,6 @@
       border-bottom: 1px solid #dee2e6;
     }
 
-    .notes {
-      padding: 16px 24px;
-      background: #fff9e6;
-      border-top: 1px solid #e9ecef;
-      font-size: 12px;
-      color: #495057;
-      line-height: 1.6;
-    }
-
-    .notes h3 {
-      color: #856404;
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    .notes ul {
-      margin-left: 16px;
-    }
-
-    .notes li {
-      margin-bottom: 4px;
-    }
-
     @media (max-width: 1200px) {
       .condition {
         font-size: 10px;
@@ -505,7 +482,7 @@
     <div class="header">
       <h1>Nintendo Switch 2 抽選情報一覧（完全版）</h1>
       <div class="subtitle">2025年6月4日現在（最新レポート完全版）</div>
-      <div class="update-note">📅 リアルタイム更新 | 🔄 全国版・地域限定版完全対応 | 📋 詳細レポート統合版</div>
+      <div class="update-note">📅 リアルタイム更新 | 🔄 全国版・地域限定版完全対応</div>
     </div>
 
     <div class="filter-section">
@@ -565,6 +542,19 @@
             <td><div class="deadline">7月上旬より順次お届け</div></td>
           </tr>
 
+          <tr data-status="active" class="urgent">
+            <td>
+              <div class="store-name">楽天ブックス</div>
+              <div class="store-type">EC大手</div>
+            </td>
+            <td><span class="status status-active">受付中</span></td>
+            <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">応募リンク</a></td>
+            <td><div class="period">6/4 12:00〜6/9 11:59</div></td>
+            <td><div class="condition">楽天会員＋指定期間内楽天ブックス購入履歴(楽天Kobo・ダウンロード商品除く)。過去Nintendo Switch 2当選者は対象外。1商品1回・1世帯1名限り</div></td>
+            <td><div class="result">未定（特設ページにて発表予定）</div></td>
+            <td><div class="deadline">未定</div></td>
+          </tr>
+
           <tr data-status="ongoing">
             <td>
               <div class="store-name">Amazon</div>
@@ -576,19 +566,6 @@
             <td><div class="condition">Amazonアカウント。招待リクエスト有効期間3ヶ月。招待キャンセル後は同商品再注文不可</div></td>
             <td><div class="result">随時招待メール通知（6/3にも送信実績）</div></td>
             <td><div class="deadline">招待メール受信後72時間以内</div></td>
-          </tr>
-
-          <tr data-status="upcoming">
-            <td>
-              <div class="store-name">楽天ブックス</div>
-              <div class="store-type">EC大手</div>
-            </td>
-            <td><span class="status status-upcoming">開始予定</span></td>
-            <td><a href="https://books.rakuten.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">6/4 12:00〜6/9 11:59</div></td>
-            <td><div class="condition">楽天会員＋指定期間内楽天ブックス購入履歴(楽天Kobo・ダウンロード商品除く)。過去Nintendo Switch 2当選者は対象外。1商品1回・1世帯1名限り</div></td>
-            <td><div class="result">未定（特設ページにて発表予定）</div></td>
-            <td><div class="deadline">未定</div></td>
           </tr>
 
           <tr data-status="upcoming">
@@ -643,6 +620,32 @@
             <td><div class="deadline">6/5〜6/8完了</div></td>
           </tr>
 
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">トイザらス</div>
+              <div class="store-type">玩具専門店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><a href="https://www.toysrus.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
+            <td><div class="period">〜6/2</div></td>
+            <td><div class="condition">スターカード会員＋購入実績</div></td>
+            <td><div class="result">6/13</div></td>
+            <td><div class="deadline">通知後案内</div></td>
+          </tr>
+
+          <tr data-status="ended">
+            <td>
+              <div class="store-name">ゲオ</div>
+              <div class="store-type">エンタメ店</div>
+            </td>
+            <td><span class="status status-ended">終了</span></td>
+            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
+            <td><div class="period">5/28〜6/9</div></td>
+            <td><div class="condition">ゲオアプリ＋Ponta連携</div></td>
+            <td><div class="result">6/13</div></td>
+            <td><div class="deadline">6/14〜6/18</div></td>
+          </tr>
+
           <!-- 地域限定版 -->
           <tr class="section-header">
             <td colspan="7" style="padding: 8px 16px; font-weight: 600; color: #495057; font-size: 13px; border-top: 2px solid #dee2e6; border-bottom: 1px solid #dee2e6;"><strong>📍 地域限定 抽選販売</strong></td>
@@ -687,32 +690,6 @@
             <td><div class="deadline">6/5〜6/8完了</div></td>
           </tr>
 
-          <tr data-status="ended">
-            <td>
-              <div class="store-name">トイザらス</div>
-              <div class="store-type">玩具専門店</div>
-            </td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><a href="https://www.toysrus.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">〜6/2</div></td>
-            <td><div class="condition">スターカード会員＋購入実績</div></td>
-            <td><div class="result">6/13</div></td>
-            <td><div class="deadline">通知後案内</div></td>
-          </tr>
-
-          <tr data-status="ended">
-            <td>
-              <div class="store-name">ゲオ</div>
-              <div class="store-type">エンタメ店</div>
-            </td>
-            <td><span class="status status-ended">終了</span></td>
-            <td><a href="https://geo-online.co.jp/" target="_blank" class="link-btn">確認リンク</a></td>
-            <td><div class="period">5/28〜6/9</div></td>
-            <td><div class="condition">ゲオアプリ＋Ponta連携</div></td>
-            <td><div class="result">6/13</div></td>
-            <td><div class="deadline">6/14〜6/18</div></td>
-          </tr>
-
         </tbody>
       </table>
       <div class="scroll-indicator-bottom"></div>
@@ -720,11 +697,11 @@
 
     <div class="stats">
       <div class="stat-item">
-        <div class="stat-number">2</div>
+        <div class="stat-number">3</div>
         <div class="stat-label">受付中</div>
       </div>
       <div class="stat-item">
-        <div class="stat-number">2</div>
+        <div class="stat-number">1</div>
         <div class="stat-label">開始予定</div>
       </div>
       <div class="stat-item">
@@ -740,7 +717,6 @@
         <div class="stat-label">終了済み</div>
       </div>
     </div>
-
 
   </div>
 
